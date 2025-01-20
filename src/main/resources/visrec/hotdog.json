@@ -1,0 +1,41 @@
+{
+  "networkType": "CONVOLUTIONAL",
+  "lossFunction": "CROSS_ENTROPY",
+  "layers": [
+    {
+      "layerType": "INPUT",
+      "channels": 3,
+      "width": 128,
+      "height": 128
+    },
+    {
+      "filterWidth": 3,
+      "filterHeight": 3,
+      "layerType": "CONVOLUTIONAL",
+      "channels": 32,
+      "stride": 1,
+      "activation": "RELU"
+    },
+    {
+      "filterWidth": 2,
+      "filterHeight": 2,
+      "layerType": "MAXPOOLING",
+      "stride": 2
+    },
+    {
+      "layerType": "FULLY_CONNECTED",
+      "width": 512,
+      "activation": "RELU"
+    },
+    {
+      "layerType": "FULLY_CONNECTED",
+      "width": 256,
+      "activation": "RELU"
+    },
+    {
+      "layerType": "OUTPUT",
+      "width": 1,
+      "activation": "SIGMOID"
+    }
+  ]
+}
